@@ -53,6 +53,10 @@ https://openweathermap.org/api
 Go to OpenWeather and register for a free account, then verify your email.
 
 On your account page, find your API key (sometimes called APPID). Keep it handy.
+
+<img width="905" height="401" alt="Image" src="https://github.com/user-attachments/assets/06233bae-2e4e-4f15-b1f5-5be27dfd7e6d" />
+
+
 B. Create Access key for this IAM user and download the .csv with the Access Key ID and Secret Access Key.
 
 You’ll only see the secret once—store it safely.
@@ -90,4 +94,5 @@ Add more cities
 Create automated testing
 Set up CI/CD pipeline
      
+
 
