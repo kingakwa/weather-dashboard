@@ -1,4 +1,5 @@
 # Weather Data Collection System
+
 ## Project Overview
 This project is a Weather Data Collection System that demonstrates core DevOps principles by combining:
 
@@ -22,6 +23,7 @@ This project is a Weather Data Collection System that demonstrates core DevOps p
 - Language: Python 3.x
 - Cloud Provider: AWS (S3)
 - External API: OpenWeather API
+- VScode for coding
 - Dependencies:
    - boto3 (AWS SDK)
    - python-dotenv
@@ -110,7 +112,7 @@ python src/weather_dashboard.py
 7. Verify your S3 uploads
 - In the AWS Console
 - Open S3 → your bucket → you should see objects under a folder path like weather/YYYY/MM/DD/… (structure may vary).
-- 
+  
 ## What I Learned
 
 AWS S3 bucket creation and management
@@ -128,6 +130,7 @@ Add more cities
 Create automated testing
 Set up CI/CD pipeline
      
+
 
 
 
