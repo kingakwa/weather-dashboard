@@ -39,10 +39,23 @@ weather-dashboard/
   .env
   .gitignore
   requirements.txt
+  
 
+<img width="934" height="347" alt="Image" src="https://github.com/user-attachments/assets/f9e966b4-878e-4f99-8de9-fac3667e8b6b" />
 
   
 ## Setup Instructions
+1. Create your accounts & install tools
+A. Create your OpenWeather account & API key
+```
+https://openweathermap.org/api
+```
+Go to OpenWeather and register for a free account, then verify your email.
+
+On your account page, find your API key (sometimes called APPID). Keep it handy.
+B. Create Access key for this IAM user and download the .csv with the Access Key ID and Secret Access Key.
+
+You’ll only see the secret once—store it safely.
 1. Clone the repository:
 --bash
 git clone https://github.com/ShaeInTheCloud/30days-weather-dashboard.git
@@ -77,3 +90,4 @@ Add more cities
 Create automated testing
 Set up CI/CD pipeline
      
+
