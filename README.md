@@ -45,38 +45,72 @@ weather-dashboard/
 
   
 ## Setup Instructions
-1. Create your accounts & install tools
+**1. Create your accounts & install tools**
 A. Create your OpenWeather account & API key
 ```
 https://openweathermap.org/api
 ```
-Go to OpenWeather and register for a free account, then verify your email.
-
-On your account page, find your API key (sometimes called APPID). Keep it handy.
+- Go to OpenWeather and register for a free account, then verify your email.
+- On your account page, find your API key (sometimes called APPID). Keep it handy.
 
 <img width="905" height="401" alt="Image" src="https://github.com/user-attachments/assets/06233bae-2e4e-4f15-b1f5-5be27dfd7e6d" />
 
 
 B. Create Access key for this IAM user and download the .csv with the Access Key ID and Secret Access Key.
-
-You’ll only see the secret once—store it safely.
-1. Clone the repository:
---bash
+   **You’ll only see the secret once—store it safely.**
+   
+**2. Clone the repository:**
+```
 git clone https://github.com/ShaeInTheCloud/30days-weather-dashboard.git
-
-3. Install dependencies:
+``` 
+**3. Install dependencies:**
+   ```
    pip install -r requirements.txt
-
-4. Configure environment variables (.env):
+   ```
+   This will install:   
+    -boto3 (AWS SDK for Python),
+     -requests (HTTP),
+      -python-dotenv (loads secrets from .env). PyPI
+   
+**4. Configure environment variables (.env):**
+   ```
    OPENWEATHER_API_KEY=your_api_key
-AWS_BUCKET_NAME=your_bucket_name
+   AWS_BUCKET_NAME=your_bucket_name
+   ```
+   - The starter app includes defaults. If you want to change them, open src/weather_dashboard.py and look for a CITIES list—edit/add city names like "London", "Douala", "New York". Save the file.
+   - make sure your bucket name is unique.
+   -  Test your OpenWeather key (sanity check)
+Run a quick request in your terminal (replace the key and city):
+  ```
+ curl "https://api.openweathermap.org/data/2.5/weather?q=Douala&appid=YOUR_OPENWEATHER_KEY_HERE&units=metric"
+  ```
+-You should see JSON output with weather fields (name, main.temp, weather[0].description, etc.).
 
-4.Configure AWS credentials:
+-If you get an error like {"cod":401, "message":"Invalid API key"}, double-check the key and that your email is verified.
+
+<img width="744" height="71" alt="Image" src="https://github.com/user-attachments/assets/711e2943-b253-44d5-b420-32e03bab5680" />
+
+
+**5.Configure AWS credentials:**
 aws configure
 
-5. Run the application:
+**6.Run the application:**
+```  
 python src/weather_dashboard.py
+```
 
+## Expected behavior:
+
+- The script prints statuses (fetching each city).
+- It writes timestamped JSON files into a local data/ folder.
+- It uploads those JSON files into your S3 bucket.
+
+  <img width="572" height="265" alt="Image" src="https://github.com/user-attachments/assets/1fc87916-045b-4b0b-b41f-05b4302788aa" />
+
+7. Verify your S3 uploads
+- In the AWS Console
+- Open S3 → your bucket → you should see objects under a folder path like weather/YYYY/MM/DD/… (structure may vary).
+- 
 ## What I Learned
 
 AWS S3 bucket creation and management
@@ -94,5 +128,6 @@ Add more cities
 Create automated testing
 Set up CI/CD pipeline
      
+
 
 
