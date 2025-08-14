@@ -112,15 +112,19 @@ python src/weather_dashboard.py
 7. Verify your S3 uploads
 - In the AWS Console
 - Open S3 → your bucket → you should see objects under a folder path like weather/YYYY/MM/DD/… (structure may vary).
+
+8. push content of on your local mechine (VScode) to your git repo
+   
+   <img width="678" height="154" alt="Image" src="https://github.com/user-attachments/assets/e9199d76-082f-4379-b345-0b40466f875c" />
   
 ## What I Learned
 
-AWS S3 bucket creation and management
-Environment variable management for secure API keys
-Python best practices for API integration
-Git workflow for project development
-Error handling in distributed systems
-Cloud resource management
+- AWS S3 bucket creation and management
+- Environment variable management for secure API keys
+- Python best practices for API integration
+- Git workflow for project development
+- Error handling in distributed systems
+- Cloud resource management
 
 ## Future Enhancements
 
@@ -130,6 +134,7 @@ Add more cities
 Create automated testing
 Set up CI/CD pipeline
      
+
 
 
 
