@@ -122,7 +122,12 @@ The app uses python-dotenv to read this file at runtime; never commit .env to Gi
 
 The starter app includes defaults. If you want to change them, open src/weather_dashboard.py and look for a CITIES list—edit/add city names like "London", "Douala", "New York". Save the file.
 
+8) Test your OpenWeather key (sanity check)
 
+Run a quick request in your terminal (replace the key and city):
+``
+curl "https://api.openweathermap.org/data/2.5/weather?q=Douala&appid=YOUR_OPENWEATHER_KEY_HERE&units=metric"
+``
 
 
 
@@ -208,4 +213,6 @@ The starter app includes defaults. If you want to change them, open src/weather_
 
 
 
+You should see JSON output with weather fields (name, main.temp, weather[0].description, etc.).
 
+If you get an error like {"cod":401, "message":"Invalid API key"}, double-check the key and that your email is verified.
