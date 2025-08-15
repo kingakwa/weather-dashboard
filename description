@@ -128,91 +128,27 @@ Run a quick request in your terminal (replace the key and city):
 ``
 curl "https://api.openweathermap.org/data/2.5/weather?q=Douala&appid=YOUR_OPENWEATHER_KEY_HERE&units=metric"
 ``
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 You should see JSON output with weather fields (name, main.temp, weather[0].description, etc.).
 
 If you get an error like {"cod":401, "message":"Invalid API key"}, double-check the key and that your email is verified.
+
+9) Run the app
+
+From the project root
+
+```
+python src/weather_dashboard.py
+``
+
+Expected behavior:
+
+The script prints statuses (fetching each city).
+
+It writes timestamped JSON files into a local data/ folder.
+
+It uploads those JSON files into your S3 bucket.
+
+10) Verify your S3 uploads
+In the AWS Console
+
+Open S3 → your bucket → you should see objects under a folder path like weather/YYYY/MM/DD/… (structure may vary).
