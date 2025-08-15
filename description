@@ -1,1 +1,211 @@
+# Weather Dashboard 
+ Runbook 
+0) What you’ll build (in plain words)
+
+A small Python app that:7) (Optional) Tell the app which cities to fetch
+
+The starter app includes defaults. If you want to change them, open src/weather_dashboard.py and look for a CITIES list—edit/add city names like "London", "Douala", "New York". Save the file.
+
+1.calls the OpenWeather API to get current weather for one or more cities,
+
+2. saves the results as timestamped JSON files, and
+
+3. uploads those files into an Amazon S3 bucket in your AWS account for safe storage.
+
+
+1) Create your accounts & install tools
+A. Create your OpenWeather account & API key
+
+Go to OpenWeather and register for a free account, then verify your email.
+
+On your account page, find your API key (sometimes called APPID). Keep it handy.
+https://openweathermap.org/register?utm_source=chatgpt.com
+
+B. Create (or use) an AWS account
+
+If you don’t have one, sign up at AWS. We’ll use S3 only (which is free/low-cost at small scale).
+
+C. Install the AWS CLI (command-line tool)
+
+Windows, macOS, or Linux: follow the official AWS “Getting Started” guide and install AWS CLI v2.
+
+D. Install Git
+
+If you don’t have Git, install it from git-scm.com (standard defaults are fine).
+
+E. Install Python 3
+
+Install Python 3.10+ from python.org (check “Add Python to PATH” on Windows).
+
+Check your tools
+
+```
+python --version
+pip --version
+aws --version
+git --version
+
+```
+
+2) Configure AWS securely (one time)
+A. Create an IAM user and access keys (programmatic access)
+
+In AWS Console, open IAM → Users → Create a user (e.g., weather-data-user).
+
+Attach permissions (for learning, you may start with AmazonS3FullAccess, then tighten later).
+
+Create Access key for this IAM user and download the .csv with the Access Key ID and Secret Access Key.
+
+You’ll only see the secret once—store it safely. 
+https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html?utm_source=chatgpt.com
+
+B. Configure the AWS CLI with your keys
+
+`aws configure`
+
+- Enter: Access Key ID, Secret Access Key, Default region (e.g., us-east-1), Default output: json.
+
+- This stores credentials locally for the CLI.
+
+3) Create your S3 bucket
+Option 1: AWS Console (easiest)
+
+Open S3 → Create bucket.
+
+Bucket name must be globally unique (e.g., akwa-weather-data-123).
+
+Choose a Region close to you.
+
+Leave “Block Public Access” ON.
+
+Create bucket.
+
+4) Get the project code locally
+
+`git clone https://github.com/ShaeInTheCloud/30days-weather-dashboard.git`
+`cd 30days-weather-dashboard`
+(That repo name is the reference used across the challenge community.)
+
+5) Create an isolated Python environment & install dependencies
+A. Create & activate a virtual environment
+
+macOS/Linux (bash/zsh):
+```
+python -m venv .venv
+source .venv/bin/activate
+```
+B. Install the required packages
+
+``
+pip install -r requirements.txt
+``
+This will install:
+
+boto3 (AWS SDK for Python),
+
+requests (HTTP),
+
+python-dotenv (loads secrets from .env). 
+
+6) Set your secrets in a .env file
+
+Create a file named .env in the project root with exactly these lines (replace placeholders):
+
+``
+OPENWEATHER_API_KEY=YOUR_OPENWEATHER_KEY_HERE
+AWS_BUCKET_NAME=YOUR_S3_BUCKET_NAME_HERE
+
+``
+The app uses python-dotenv to read this file at runtime; never commit .env to Git/GitHub.
+
+7) (Optional) Tell the app which cities to fetch
+
+The starter app includes defaults. If you want to change them, open src/weather_dashboard.py and look for a CITIES list—edit/add city names like "London", "Douala", "New York". Save the file.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
