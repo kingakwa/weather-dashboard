@@ -76,8 +76,8 @@ git clone https://github.com/ShaeInTheCloud/30days-weather-dashboard.git
    
 **4. Configure environment variables (.env):**
    ```
-   OPENWEATHER_API_KEY=your_api_key
-   AWS_BUCKET_NAME=your_bucket_name
+   echo "OPENWEATHER_API_KEY=your_api_key"
+   echo "AWS_BUCKET_NAME=your_bucket_name"
    ```
    - The starter app includes defaults. If you want to change them, open src/weather_dashboard.py and look for a CITIES list—edit/add city names like "London", "Douala", "New York". Save the file.
    - make sure your bucket name is unique.
@@ -134,6 +134,7 @@ Add more cities
 Create automated testing
 Set up CI/CD pipeline
      
+
 
 
 
